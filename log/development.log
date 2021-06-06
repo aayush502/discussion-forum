@@ -1869,3 +1869,150 @@ Processing by DiscussionsController#show as HTML
 Completed 200 OK in 112ms (Views: 92.1ms | ActiveRecord: 7.9ms)
 
 
+  [1m[36mUser Load (20.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" LIMIT $1[0m  [["LIMIT", 11]]
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT pg_try_advisory_lock(6639694260943957395)[0m
+  [1m[35m (31.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[36mActiveRecord::InternalMetadata Load (29.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT pg_advisory_unlock(6639694260943957395)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Started GET "/" for 127.0.0.1 at 2021-06-06 21:58:23 +0545
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DiscussionsController#index as HTML
+  Rendering discussions/index.html.erb within layouts/application
+  [1m[36mDiscussion Load (13.5ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" ORDER BY created_at desc[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (30.4ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (309.8ms)
+  [1m[36mChannel Load (1.3ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  Rendered discussions/_sidebar.html.erb (6.1ms)
+  Rendered discussions/index.html.erb within layouts/application (335.9ms)
+Completed 200 OK in 1345ms (Views: 1031.8ms | ActiveRecord: 67.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-06 22:05:30 +0545
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by DiscussionsController#index as HTML
+  Rendering discussions/index.html.erb within layouts/application
+  [1m[36mDiscussion Load (3.6ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" ORDER BY created_at desc[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (1.0ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (264.2ms)
+  [1m[36mChannel Load (1.2ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  Rendered discussions/_sidebar.html.erb (5.8ms)
+  Rendered discussions/index.html.erb within layouts/application (291.0ms)
+Completed 401 Unauthorized in 662ms (ActiveRecord: 36.2ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: ~bootstrap/scss/bootstrap.
+Load paths:
+  /home/aayush/discussions/app/assets/config
+  /home/aayush/discussions/app/assets/images
+  /home/aayush/discussions/app/assets/javascripts
+  /home/aayush/discussions/app/assets/stylesheets
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/bulma-rails-0.6.2/app/assets/stylesheets
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/aayush/discussions/node_modules):
+     6: 
+     7:     <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no>
+     8:     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11: 
+    12:   </head>
+  
+app/assets/stylesheets/application.scss:17
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__3131826468658817557_20360'
+Started GET "/" for 127.0.0.1 at 2021-06-06 22:07:08 +0545
+Processing by DiscussionsController#index as HTML
+  Rendering discussions/index.html.erb within layouts/application
+  [1m[36mDiscussion Load (1.4ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" ORDER BY created_at desc[0m
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (0.8ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (21.9ms)
+  [1m[36mChannel Load (0.7ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  Rendered discussions/_sidebar.html.erb (4.9ms)
+  Rendered discussions/index.html.erb within layouts/application (31.1ms)
+Completed 401 Unauthorized in 282ms (ActiveRecord: 5.6ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: node_modules/bootstrap/scss/bootstrap.
+Load paths:
+  /home/aayush/discussions/app/assets/config
+  /home/aayush/discussions/app/assets/images
+  /home/aayush/discussions/app/assets/javascripts
+  /home/aayush/discussions/app/assets/stylesheets
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/bulma-rails-0.6.2/app/assets/stylesheets
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/aayush/discussions/node_modules):
+     6: 
+     7:     <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no>
+     8:     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11: 
+    12:   </head>
+  
+app/assets/stylesheets/application.scss:17
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__3131826468658817557_20960'
+Started GET "/" for 127.0.0.1 at 2021-06-06 22:07:42 +0545
+Processing by DiscussionsController#index as HTML
+  Rendering discussions/index.html.erb within layouts/application
+  [1m[36mDiscussion Load (1.3ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" ORDER BY created_at desc[0m
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (1.1ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (12.5ms)
+  [1m[36mChannel Load (1.2ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  Rendered discussions/_sidebar.html.erb (5.0ms)
+  Rendered discussions/index.html.erb within layouts/application (20.3ms)
+Completed 401 Unauthorized in 60ms (ActiveRecord: 4.5ms)
+
+
+  
+ActionView::Template::Error (File to import not found or unreadable: bootstrap.
+Load paths:
+  /home/aayush/discussions/app/assets/config
+  /home/aayush/discussions/app/assets/images
+  /home/aayush/discussions/app/assets/javascripts
+  /home/aayush/discussions/app/assets/stylesheets
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/jquery-rails-4.3.1/vendor/assets/javascripts
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/bulma-rails-0.6.2/app/assets/stylesheets
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/coffee-rails-4.2.2/lib/assets/javascripts
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/actioncable-5.1.4/lib/assets/compiled
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/actionview-5.1.4/lib/assets/compiled
+  /home/aayush/.rvm/gems/ruby-3.0.0/gems/turbolinks-source-5.1.0/lib/assets/javascripts
+  /home/aayush/discussions/node_modules):
+     6: 
+     7:     <meta name="viewport" content="width=device-width, initial-scale=1.0", maximum-scale=1.0, user-scalable=no>
+     8:     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
+     9:     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    10:     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    11: 
+    12:   </head>
+  
+app/assets/stylesheets/application.scss:17
+app/views/layouts/application.html.erb:9:in `_app_views_layouts_application_html_erb__3131826468658817557_21540'
+Started GET "/" for 127.0.0.1 at 2021-06-06 22:07:56 +0545
+Processing by DiscussionsController#index as HTML
+  Rendering discussions/index.html.erb within layouts/application
+  [1m[36mDiscussion Load (0.6ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" ORDER BY created_at desc[0m
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (1.1ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (18.0ms)
+  [1m[36mChannel Load (0.8ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  Rendered discussions/_sidebar.html.erb (3.0ms)
+  Rendered discussions/index.html.erb within layouts/application (23.4ms)
+Completed 200 OK in 284ms (Views: 277.5ms | ActiveRecord: 3.5ms)
+
+
