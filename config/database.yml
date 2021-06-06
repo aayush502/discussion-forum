@@ -1,0 +1,14 @@
+development:
+  host: localhost
+  adapter: postgresql
+  encoding: unicode
+  database: discussion  
+  pool: 5
+  username: postgres
+  password: postgres
+
+  production:
+  database: discussion
+  adapter: postgresql
+  # host: localhost
+  # password: postgres
