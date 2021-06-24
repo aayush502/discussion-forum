@@ -2,13 +2,10 @@
 <html>
   <head>
     <title>Discussions</title>
-    <%= csrf_meta_tags %>
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <%= stylesheet_link_tag "https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" %>
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
-
+    <%= stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': true %>
+    <%= csrf_meta_tags %>
   </head>
 
   <body>
@@ -24,7 +21,7 @@
     <% end %>
      <nav class="navbar is-light" role="navigation" aria-label="main navigation">
       <div class="navbar-brand">
-        <%= link_to root_path, class:"navbar-item" do %>
+        <%= link_to root_path, class:"navbar-item"  do %>
           <h1 class="title is-5">Discussions</h1>
         <% end  %>
       <div class="navbar-burger burger" data-target="navMenu">
@@ -34,7 +31,7 @@
       </div>
     </div>
 
-      <div id="navMenu" class="navbar-menu">
+      <div id="navMenu" class="navbar-menu">  
         <div class="navbar-end">
           <% if user_signed_in? %>
           <div class="navbar-item">
@@ -77,6 +74,6 @@
     <%= yield %>
   </div>
 </section>
-
-  </body>
+<%= javascript_include_tag 'application', 'data-turbolinks-track': true %>
+</body>
 </html>
