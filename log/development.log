@@ -5095,3 +5095,121 @@ Processing by DiscussionsController#index as HTML
 Completed 200 OK in 50ms (Views: 45.0ms | ActiveRecord: 3.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2021-06-24 21:32:13 +0545
+Processing by DiscussionsController#index as HTML
+  Rendering discussions/index.html.erb within layouts/application
+  [1m[36mDiscussion Load (0.7ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" ORDER BY created_at desc[0m
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (0.6ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (12.4ms)
+  [1m[36mChannel Load (0.5ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  [1m[36mRole Load (2.5ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  Rendered discussions/_sidebar.html.erb (6.6ms)
+  Rendered discussions/index.html.erb within layouts/application (22.3ms)
+Completed 200 OK in 51ms (Views: 42.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/discussions/hjsdvc" for 127.0.0.1 at 2021-06-24 21:32:27 +0545
+Processing by DiscussionsController#show as HTML
+  Parameters: {"id"=>"hjsdvc"}
+  [1m[36mDiscussion Load (1.3ms)[0m  [1m[34mSELECT  "discussions".* FROM "discussions" WHERE "discussions"."slug" = $1 LIMIT $2[0m  [["slug", "hjsdvc"], ["LIMIT", 1]]
+  Rendering discussions/show.html.erb within layouts/application
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (1.4ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT COUNT(*) FROM "replies" WHERE "replies"."discussion_id" = $1[0m  [["discussion_id", 1]]
+  [1m[36mReply Load (1.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."discussion_id" = $1[0m  [["discussion_id", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of replies/_reply.html.erb [1 times] (9.0ms)
+  Rendered replies/_form.html.erb (7.5ms)
+  [1m[36mChannel Load (0.6ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  [1m[36mRole Load (1.6ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  Rendered discussions/_sidebar.html.erb (8.0ms)
+  Rendered discussions/show.html.erb within layouts/application (65.0ms)
+Completed 200 OK in 105ms (Views: 85.0ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-24 21:32:30 +0545
+Processing by DiscussionsController#index as HTML
+  Rendering discussions/index.html.erb within layouts/application
+  [1m[36mDiscussion Load (1.2ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" ORDER BY created_at desc[0m
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (1.6ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (31.1ms)
+  [1m[36mChannel Load (1.8ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  [1m[36mRole Load (2.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  Rendered discussions/_sidebar.html.erb (15.6ms)
+  Rendered discussions/index.html.erb within layouts/application (51.7ms)
+Completed 200 OK in 114ms (Views: 97.7ms | ActiveRecord: 10.7ms)
+
+
+Started GET "/discussions/hjsdvc" for 127.0.0.1 at 2021-06-24 21:40:30 +0545
+Processing by DiscussionsController#show as HTML
+  Parameters: {"id"=>"hjsdvc"}
+  [1m[36mDiscussion Load (76.8ms)[0m  [1m[34mSELECT  "discussions".* FROM "discussions" WHERE "discussions"."slug" = $1 LIMIT $2[0m  [["slug", "hjsdvc"], ["LIMIT", 1]]
+  Rendering discussions/show.html.erb within layouts/application
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (1.1ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT COUNT(*) FROM "replies" WHERE "replies"."discussion_id" = $1[0m  [["discussion_id", 1]]
+  [1m[36mReply Load (1.2ms)[0m  [1m[34mSELECT "replies".* FROM "replies" WHERE "replies"."discussion_id" = $1[0m  [["discussion_id", 1]]
+  [1m[36mCACHE User Load (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered collection of replies/_reply.html.erb [1 times] (44.4ms)
+  Rendered replies/_form.html.erb (151.1ms)
+  [1m[36mChannel Load (1.1ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  [1m[36mRole Load (4.2ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  Rendered discussions/_sidebar.html.erb (15.9ms)
+  Rendered discussions/show.html.erb within layouts/application (377.8ms)
+Completed 200 OK in 1475ms (Views: 1000.6ms | ActiveRecord: 88.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-24 21:40:35 +0545
+Processing by DiscussionsController#index as HTML
+  Rendering discussions/index.html.erb within layouts/application
+  [1m[36mDiscussion Load (1.0ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" ORDER BY created_at desc[0m
+  [1m[36mUser Load (2.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (1.4ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (4.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (32.9ms)
+  [1m[36mChannel Load (1.7ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  [1m[36mRole Load (2.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  Rendered discussions/_sidebar.html.erb (16.1ms)
+  Rendered discussions/index.html.erb within layouts/application (137.8ms)
+Completed 200 OK in 637ms (Views: 194.0ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/channels/general" for 127.0.0.1 at 2021-06-24 21:40:42 +0545
+Processing by ChannelsController#show as HTML
+  Parameters: {"id"=>"general"}
+  [1m[36mChannel Load (1.0ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."slug" = $1 LIMIT $2[0m  [["slug", "general"], ["LIMIT", 1]]
+  Rendering channels/show.html.erb within layouts/application
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mRole Load (2.8ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  [1m[36mDiscussion Load (1.4ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" WHERE (channel_id = 1)[0m
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (1.3ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (22.6ms)
+  [1m[36mChannel Load (1.0ms)[0m  [1m[34mSELECT "channels".* FROM "channels"[0m
+  [1m[36mCACHE Role Load (0.0ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  Rendered discussions/_sidebar.html.erb (8.6ms)
+  Rendered channels/show.html.erb within layouts/application (51.3ms)
+Completed 200 OK in 135ms (Views: 81.0ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2021-06-24 21:40:45 +0545
+Processing by DiscussionsController#index as HTML
+  Rendering discussions/index.html.erb within layouts/application
+  [1m[36mDiscussion Load (1.6ms)[0m  [1m[34mSELECT "discussions".* FROM "discussions" ORDER BY created_at desc[0m
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mChannel Load (2.0ms)[0m  [1m[34mSELECT  "channels".* FROM "channels" WHERE "channels"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 ORDER BY "users"."id" ASC LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered shared/_discussions.html.erb (34.4ms)
+  [1m[36mChannel Load (2.9ms)[0m  [1m[34mSELECT "channels".* FROM "channels" ORDER BY created_at desc[0m
+  [1m[36mRole Load (2.9ms)[0m  [1m[34mSELECT "roles".* FROM "roles" INNER JOIN "users_roles" ON "roles"."id" = "users_roles"."role_id" WHERE "users_roles"."user_id" = $1 AND (((roles.name = 'admin') AND (roles.resource_type IS NULL) AND (roles.resource_id IS NULL)))[0m  [["user_id", 1]]
+  Rendered discussions/_sidebar.html.erb (15.2ms)
+  Rendered discussions/index.html.erb within layouts/application (55.0ms)
+Completed 200 OK in 115ms (Views: 98.5ms | ActiveRecord: 12.6ms)
+
+
